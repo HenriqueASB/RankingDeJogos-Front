@@ -1,1 +1,37 @@
-<p>register works!</p>
+<br>
+<div class="row" style="text-align: center;">
+    <mat-card>
+        <mat-card-title>Registro</mat-card-title>
+        <mat-card-content>
+            <form [formGroup]="Form">
+                <mat-form-field class="full-width">
+                    <input matInput placeholder="Nome" formControlName="nome">
+                    <mat-hint>Insira seu Nome</mat-hint>
+                    <mat-error *ngIf="Form.get('nome').hasError('required')">
+                        Nome é <strong>obrigatorio</strong>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <input matInput placeholder="Email" formControlName="email">
+                    <mat-hint>Insira seu email</mat-hint>
+                    <mat-error *ngIf="Form.get('email').hasError('required')">
+                        Email é <strong>obrigatorio</strong>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <input matInput  type="password" placeholder="Senha" formControlName="senha">
+                    <mat-hint>Insira sua senha</mat-hint>
+                    <mat-error *ngIf="Form.get('senha').hasError('required')">
+                        A senha é <strong>obrigatoria</strong>
+                    </mat-error>
+                </mat-form-field>
+            </form>
+        </mat-card-content>
+        <mat-card-footer>
+            <div class="botoes">
+                <button mat-raised-button color="accent" (click)="registrar()" >Salvar</button>
+            </div>
+        </mat-card-footer>
+    </mat-card>
+</div>
+<br>

@@ -1,1 +1,62 @@
-<p>user-perfil works!</p>
+
+<mat-card *ngIf="!editar">
+        <mat-card-content>	
+            <div class="row">
+                
+                <div class="col-md-3">  <img src="assets/images/users/1.jpg" style="width: 150px; height: 200px;"> </div>
+                
+                <div class="col-md-9">
+                    <div class="row">Nome: {{user.nome}}</div>
+                    <div class="row">Email: {{user.email}}</div>
+                    <br>
+                    <div class="row"> <button class="btn btn-primary"(click)="iniciarEdicao()">Editar Usuario</button></div>
+                </div>
+                
+            </div>
+        </mat-card-content>
+</mat-card>
+
+<mat-card *ngIf="editar">
+        <mat-card-content>	
+            <div class="row">
+                
+                <div class="col-md-3">  <img src="assets/images/users/1.jpg" style="width: 150px; height: 200px;"> </div>
+                
+                <div class="col-md-9">
+                        <form [formGroup]="form">
+                                <mat-form-field class="full-width">
+                                    <input matInput [(ngModel)]="user.nome" placeholder="Nome" formControlName="nome">
+                                    <mat-hint>Insira seu Nome</mat-hint>
+                                    <mat-error *ngIf="form.get('nome').hasError('required')">
+                                        Nome é <strong>obrigatorio</strong>
+                                    </mat-error>
+                                </mat-form-field>
+                                <mat-form-field class="full-width">
+                                    <input matInput [(ngModel)]="user.email" placeholder="Email" formControlName="email">
+                                    <mat-hint>Insira seu email</mat-hint>
+                                    <mat-error *ngIf="form.get('email').hasError('required')">
+                                        Email é <strong>obrigatorio</strong>
+                                    </mat-error>
+                                </mat-form-field>
+                                <mat-form-field class="full-width">
+                                    <input matInput type="password" placeholder="Senha" formControlName="senha">
+                                    <mat-hint>Insira sua senha</mat-hint>
+                                    <mat-error *ngIf="form.get('senha').hasError('required')">
+                                        A senha é <strong>obrigatoria</strong>
+                                    </mat-error>
+                                </mat-form-field>
+                            </form> 
+                    <div class="row">
+                        <div class="col-md-6 text-left">
+                            <button class="btn btn-secondary"(click)="cancelar()">cancelar</button> 
+                            
+                        </div> 
+                        <div class="col-md-6 text-right">
+                        <button class="btn btn-primary" (click)="concluirEdicao()">Salvar</button>
+                    </div>
+                </div>
+                </div>
+                
+            </div>
+        </mat-card-content>
+</mat-card>

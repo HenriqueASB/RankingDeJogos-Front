@@ -21,7 +21,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { UserPerfilComponent } from './component/user-perfil/user-perfil.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { MatInput } from '@angular/material';
+import { MatInput, MatSnackBarModule } from '@angular/material';
+import { ListaJogoComponent } from './component/lista-jogo/lista-jogo.component';
+import { CadastraJogoComponent } from './component/cadastra-jogo/cadastra-jogo.component';
+import { AvaliaJogoComponent } from './component/avalia-jogo/avalia-jogo.component';
 
 
 @NgModule({
@@ -32,7 +35,9 @@ import { MatInput } from '@angular/material';
     SpinnerComponent,
     AppSidebarComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    CadastraJogoComponent,
+    AvaliaJogoComponent
   ],
   imports: [
     BrowserModule,
@@ -45,6 +50,7 @@ import { MatInput } from '@angular/material';
     FontAwesomeModule,
     RouterModule.forRoot(AppRoutes),
     ReactiveFormsModule,
+    MatSnackBarModule
     // MatInput
   ],
   providers: [

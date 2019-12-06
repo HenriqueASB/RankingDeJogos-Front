@@ -4,18 +4,18 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
+export class GameService {
 
   url:string;
   httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
   };
   constructor(private http: HttpClient) { 
-    this.url = "http://localhost:8080/user/login";
+    this.url = "http://localhost:8080/game";
     }
 
-  login(usuario: Usuario) {
-    return this.http.post<any>(this.url, usuario, this.httpOptions).pipe();
+  get() {
+    return this.http.get<any>(this.url, this.httpOptions).pipe();
   }
 
 }

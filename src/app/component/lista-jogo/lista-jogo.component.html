@@ -1,0 +1,19 @@
+
+<mat-card *ngFor="let j of jogo">
+        <mat-card-content>	
+            <div class="row">
+                
+                <div class="col-md-3">  <img [src]="j.urlFoto"  style="width: 150px; height: 200px;"> </div>
+                
+                <div class="col-md-9">
+                    <div class="row">Nome: {{j.titulo}} </div>
+                    <div class="row">Desenvolvedora: {{j.empresa.nome}} </div>
+                    <div class="row">Generos: </div>
+                    <div class="row" *ngFor="let genero of j.genero"> {{genero.genero}} </div>
+                    <div class="row">Sinopse: {{j.sinopse}} </div>
+                    <br>
+                </div>
+                
+            </div>
+        </mat-card-content>
+</mat-card>
