@@ -15,6 +15,7 @@ export class UserService {
     }
 
   update(usuario: Usuario) {
+    console.log(usuario)
     return this.http.put<any>(this.url, usuario, this.httpOptions).pipe();
   }
 

@@ -1,1 +1,32 @@
-<p>avalia-jogo works!</p>
+<mat-card>
+        <mat-card-content>	
+            <div class="row">
+                
+                <div class="col-md-3">  <img [src]="jogo.urlFoto"  style="width: 150px; height: 200px;"> </div>
+                
+                <div class="col-md-9">
+                    <div class="row">Nome: {{jogo.titulo}} </div>
+                    <div class="row">Desenvolvedora: {{jogo.empresa.nome}}  | Ano de Desenvolvimento:{{jogo.empresa.ano}} </div>
+                    <div class="row">Generos: </div>
+                    <div class="row">
+                        <div *ngFor="let genero of jogo.genero">
+                                {{genero.genero}}; &nbsp;
+                        </div> 
+                    </div>
+                    <div class="row">Plataformas: </div>
+                    <div class="row"  *ngFor="let console of jogo.console">
+                           {{console.nome}} | Fabricante: {{console.Fabricante}} | Ano: {{console.ano}}
+                            
+                         </div>
+                    <div class="row">Sinopse: </div>
+                         <div class="row"> <p>{{jogo.sinopse}}</p></div>
+                    <br>
+                </div>
+                
+            </div>
+            <div class="row">
+                    <button class="btn btn-danger" (click)="naoRecomendo()">Não Recomendo</button> <button class="btn btn-success" (click)="recomendo()">Recomendo</button>
+                <br>
+            </div>
+        </mat-card-content>
+</mat-card>

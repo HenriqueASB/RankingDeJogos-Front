@@ -6,7 +6,8 @@ class Jogo{
         public  genero?: Genero[],
         public  console?: Plataforma[],
         public  sinopse?: string,
-        public  urlFoto?: string
+        public  urlFoto?: string,
+        public  nota?: number
     ){
 
     }

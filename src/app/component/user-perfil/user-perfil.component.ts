@@ -42,6 +42,7 @@ export class UserPerfilComponent implements OnInit {
     this.user.nome = this.form.value.nome;
     this.user.email = this.form.value.email;
     this.user.senha = this.form.value.senha;
+    console.log(this.user)
     this.userService.update(this.user).subscribe(res=>{
       this.snackBar.open("Usuario atualizado com sucesso","ok", {
         duration: 2000,

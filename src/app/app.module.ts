@@ -18,13 +18,10 @@ import { DemoMaterialModule } from './demo-material-module';
 import { SharedModule } from './shared/shared.module';
 import { SpinnerComponent } from './shared/spinner.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { UserPerfilComponent } from './component/user-perfil/user-perfil.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { MatInput, MatSnackBarModule } from '@angular/material';
-import { ListaJogoComponent } from './component/lista-jogo/lista-jogo.component';
+import { MatSnackBarModule } from '@angular/material';
 import { CadastraJogoComponent } from './component/cadastra-jogo/cadastra-jogo.component';
-import { AvaliaJogoComponent } from './component/avalia-jogo/avalia-jogo.component';
 
 
 @NgModule({
@@ -37,7 +34,7 @@ import { AvaliaJogoComponent } from './component/avalia-jogo/avalia-jogo.compone
     LoginComponent,
     RegisterComponent,
     CadastraJogoComponent,
-    AvaliaJogoComponent
+    
   ],
   imports: [
     BrowserModule,

@@ -28,6 +28,10 @@ export const AppRoutes: Routes = [
       {
         path: 'listaJogo',
         loadChildren: () => import('./component/lista-jogo/lista-jogo.module').then(m => m.ListaJogoModule)
+      },
+      {
+        path: 'avaliaJogo',
+        loadChildren: () => import('./component/avalia-jogo/avalia-jogo.module').then(m => m.AvaliaJogoModule)
       }
     ],
     canActivate:[AuthGuardService]

@@ -6,13 +6,28 @@
                 <div class="col-md-3">  <img [src]="j.urlFoto"  style="width: 150px; height: 200px;"> </div>
                 
                 <div class="col-md-9">
-                    <div class="row">Nome: {{j.titulo}} </div>
-                    <div class="row">Desenvolvedora: {{j.empresa.nome}} </div>
-                    <div class="row">Generos: </div>
-                    <div class="row" *ngFor="let genero of j.genero"> {{genero.genero}} </div>
-                    <div class="row">Sinopse: {{j.sinopse}} </div>
+                    <div class="row">
+                        <div class="col-md-8"> Nome: {{j.titulo}}</div>
+                        <div class="col-md-4"> Recomentação: {{(j.nota*100).toFixed(2)}}%</div>
+                         </div>
+                    <div class="row col-md-12">Desenvolvedora: {{j.empresa.nome}} </div>
+                    <div class="row col-md-12">Generos: </div>
+                    <div class="row col-md-12">
+                        <div *ngFor="let genero of j.genero">
+                                {{genero.genero}}; &nbsp;
+                        </div> 
+                    </div>
+                    <div class="row col-md-12">Plataformas: </div>
+                    <div class="row col-md-12" >
+                            <div *ngFor="let console of j.console">
+                                    {{console.nome}}; &nbsp;
+                            </div> 
+                         </div>
+                    <div class="row col-md-12">Sinopse: </div>
+                         <div class="row col-md-12"> <p>{{j.sinopse}}</p></div>
                     <br>
                 </div>
+                <div class="row col-md-12" > <button class="btn btn-success" (click)='irAvaliacao(j)' >Avaliar</button></div>
                 
             </div>
         </mat-card-content>
