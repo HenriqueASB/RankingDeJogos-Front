@@ -16,6 +16,7 @@ export class ListaJogoComponent implements OnInit {
     this.gameService.get().subscribe(res=>{
 
       this.jogo = res;
+      this.jogo.sort((a,b) => (a.nota > b.nota?-1:1) )
       console.log(this.jogo)
     })
 
